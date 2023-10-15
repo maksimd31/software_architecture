@@ -1,3 +1,11 @@
+Архитектура ПО (семинары)
+Урок 4. Компоненты. Принципы связности и сочетаемости компонентов
+Доработать упражнение, начатое на занятии
+
+Код на питоне 
+
+```python
+
 from datetime import datetime
 from abc import ABC, abstractmethod
 
@@ -109,7 +117,6 @@ class BankAccount:
     def get_card(self) -> int:
         return self.card
 
-
     def get_balance(self) -> int:
         return self.balance
 
@@ -121,7 +128,7 @@ class Place:
 
     def get_name(self):
         return self.name
-∂
+
     def get_location(self):
         return self.location
 
@@ -159,3 +166,7 @@ class Carrier:
 
     def get_card_number(self) -> int:
         return self.cardNumber
+
+```
+
+![img.png](img.png)
