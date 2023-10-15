@@ -1,0 +1,154 @@
+@startuml
+
+interface MarketPlaceController {
+  +browseProducts()
+  +addToCart(product)
+  +removeFromCart(product)
+  +searchProducts(keyword)
+  +interactWithUser()
+  +processPayment(amount)
+  +getProductDetails(product)
+  +manageData()
+}
+
+interface MarketPlaceModel {
+  +getInventory()
+  +getShoppingCart()
+  +setShoppingCart(cart)
+  +getPaymentMethod()
+  +setPaymentMethod(method)
+  +calculateDiscount()
+}
+
+interface MarketPlaceView {
+  +displayProducts(products)
+  +displayProductDetails(product)
+  +displayMessage(message)
+}
+
+interface Product {
+  +getName()
+  +getPrice()
+}
+
+interface CustomerController {
+  +register()
+  +login()
+  +browseProducts()
+  +addToCart(product)
+  +removeFromCart(product)
+  +checkout()
+  +calculateDiscount()
+}
+
+interface CustomerModel {
+  +getName()
+  +getEmail()
+  +getShoppingCart()
+  +setShoppingCart(cart)
+}
+
+interface CustomerView {
+  +displayProducts(products)
+  +displayMessage(message)
+}
+
+interface PaymentGateway {
+  +processPayment(amount)
+}
+
+interface ProductCard {
+  +displayProductDetails()
+}
+
+class MarketPlaceControllerImpl {
+  -model: MarketPlaceModelImpl
+  -view: MarketPlaceViewImpl
+  +browseProducts()
+  +addToCart(product)
+  +removeFromCart(product)
+  +searchProducts(keyword)
+  +interactWithUser()
+  +processPayment(amount)
+  +getProductDetails(product)
+  +manageData()
+}
+
+class CustomerControllerImpl {
+  -model: CustomerModelImpl
+  -view: CustomerViewImpl
+  +register()
+  +login()
+  +browseProducts()
+  +addToCart(product)
+  +removeFromCart(product)
+  +checkout()
+  +calculateDiscount()
+}
+
+class MarketPlaceModelImpl {
+  -inventory: []
+  -shoppingCart: []
+  -paymentMethod: ""
+  +getInventory()
+  +getShoppingCart()
+  +setShoppingCart(cart)
+  +getPaymentMethod()
+  +setPaymentMethod(method)
+  +calculateDiscount()
+}
+
+class CustomerModelImpl {
+  -name: ""
+  -email: ""
+  -shoppingCart: []
+  +getName()
+  +getEmail()
+  +getShoppingCart()
+  +setShoppingCart(cart)
+}
+
+class MarketPlaceViewImpl {
+  +displayProducts(products)
+  +displayProductDetails(product)
+  +displayMessage(message)
+}
+
+class ProductImpl {
+  -name: ""
+  -price: 0.0
+  +getName()
+  +getPrice()
+}
+
+class CustomerViewImpl {
+  +displayProducts(products)
+  +displayMessage(message)
+}
+
+class PaymentGatewayImpl {
+  +processPayment(amount)
+}
+
+class ProductCardImpl {
+  -product: None
+  +displayProductDetails()
+}
+
+MarketPlaceController --> MarketPlaceModel
+MarketPlaceController --> MarketPlaceView
+MarketPlaceController --> Product
+MarketPlaceControllerImpl --|> MarketPlaceController
+CustomerController --> CustomerModel
+CustomerController --> CustomerView
+CustomerController --> Product
+CustomerControllerImpl --|> CustomerController
+MarketPlaceModelImpl --|> MarketPlaceModel
+CustomerModelImpl --|> CustomerModel
+MarketPlaceViewImpl --|> MarketPlaceView
+ProductImpl --|> Product
+CustomerViewImpl --|> CustomerView
+PaymentGatewayImpl --|> PaymentGateway
+ProductCardImpl --|> ProductCard
+
+@enduml

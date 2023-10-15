@@ -1,0 +1,101 @@
+@startuml
+
+class User {
+  - id: int
+  - username: str
+  - password: int
+  - card_number: int
+  - bank_account: BankAccount
+  - tickets: list
+
+  + get_id(): int
+  + set_id(id: int): None
+  + get_username(): str
+  + set_username(username: str): None
+  + get_password(): int
+  + set_password(password: int): None
+  + get_card_number(): int
+  + set_card_number(card_number: int): None
+  + get_bank_account(): BankAccount
+  + set_bank_account(bank_account: BankAccount): None
+  + add_ticket(ticket: Ticket): None
+  + get_tickets(): list
+}
+
+class iCustomer {
+  {abstract}
+  + purchase_ticket(ticket: Ticket): None
+}
+
+class Customer {
+  + purchase_ticket(ticket: Ticket): None
+}
+
+class Ticket {
+  - price: float
+  - id: int
+  - place: Place
+  - date_time: DateTime
+  - is_valid: bool
+  - card_number: int
+  - interest: str
+  - carrier: Carrier
+
+  + get_price(): float
+  + get_id(): int
+  + get_place(): Place
+  + get_date_time(): DateTime
+  + is_valid_ticket(): bool
+  + get_card_number(): int
+  + get_interest(): str
+  + get_carrier(): Carrier
+}
+
+class BankAccount {
+  - card: int
+  - balance: int
+
+  + get_card(): int
+  + get_balance(): int
+}
+
+class Place {
+  - name
+  - location
+
+  + get_name()
+  + get_location()
+}
+
+class DateTime {
+  - date
+  - time
+  - ticket: Ticket
+
+  + get_date()
+  + get_time()
+  + set_ticket(ticket: Ticket): None
+  + get_ticket(): Ticket
+}
+
+class Carrier {
+  - id: int
+  - places: list
+  - card_number: int
+
+  + get_id(): int
+  + get_places(): list
+  + get_card_number(): int
+}
+
+User --> BankAccount
+User --> Ticket
+User --> iCustomer
+iCustomer <|.. Customer
+Ticket --> Place
+Ticket --> DateTime
+Ticket --> Carrier
+DateTime --> Ticket
+Carrier --> Place
+
+@enduml
