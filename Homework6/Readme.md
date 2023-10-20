@@ -11,7 +11,7 @@
 
 ## [ссылка](https://dbdesigner.page.link/FA5r1TfpUPyy3C7bA) 
 
-![Снимок экрана 2023-10-20 в 16.38.03.png](..%2F..%2F..%2F..%2F..%2F..%2Fvar%2Ffolders%2F1d%2F7byy1tjj5p36r6btnpzyg4s80000gn%2FT%2FTemporaryItems%2FNSIRD_screencaptureui_4xbqbz%2F%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202023-10-20%20%D0%B2%2016.38.03.png)
+![Снимок экрана 2023-10-20 в 21.39.36.png](%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202023-10-20%20%D0%B2%2021.39.36.png)
 
 ## код markup
 ```mysql-sql
