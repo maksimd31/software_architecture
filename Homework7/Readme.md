@@ -71,8 +71,10 @@ ALTER TABLE PRODUCT ADD CONSTRAINT FK_PRODUCT_CATEGORY FOREIGN KEY (category_id)
 
 ```
 
-# UML - диаграммы 
+# UML - диаграммы  
+## я не знаю зачем придумывать велосипед, если есть в java всего два часто используемых метода проектирования MVC, MVP
 ![img.png](img.png)
+
 # Как оно должно быть на самом деле 
 
 ![img_1.png](img_1.png)
