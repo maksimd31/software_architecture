@@ -1,0 +1,33 @@
+@startuml
+
+package "Presentation Layer" {
+  [HTML]
+  [CSS]
+  [JavaScript]
+}
+
+package "Application Layer" {
+  [Controller]
+  [Service]
+}
+
+package "Data Access Layer" {
+  [Repository]
+  [Database]
+}
+
+package "Domain Layer" {
+  [Entities]
+  [Value Objects]
+  [Repositories]
+  [Services]
+}
+
+[HTML] --> [CSS]
+[JavaScript] --> [Controller]
+[Controller] --> [Service]
+[Service] --> [Repositories]
+[Repositories] --> [Database]
+[Entities] --> [Value Objects]
+
+@enduml

@@ -1,0 +1,65 @@
+@startuml
+
+skinparam component {
+  BackgroundColor<<Container>> LightYellow
+  BorderColor<<Container>> DarkSlateGray
+  FontStyle<<Container>> Bold
+  BackgroundColor<<Component>> LightBlue
+  BorderColor<<Component>> DarkSlateBlue
+  FontStyle<<Component>> Bold
+}
+
+package "Модели" {
+  [ChartModel]
+  [BootstrapModel]
+  [CUSTOMERModel]
+  [ORDERModel]
+  [ADDRESSModel]
+  [ORDER_ITEMModel]
+  [PRODUCT_CATEGORYModel]
+  [PRODUCTModel]
+}
+
+package "Представления" {
+  [HTMLView]
+  [CSSView]
+}
+
+package "Контроллеры" {
+  [HTMLController]
+  [CSSController]
+}
+
+package "База данных" {
+  [CUSTOMER]
+  [ORDER]
+  [ADDRESS]
+  [ORDER_ITEM]
+  [PRODUCT_CATEGORY]
+  [PRODUCT]
+}
+
+[HTMLView] --> [HTMLController]
+[CSSView] --> [CSSController]
+
+[HTMLController] --> [ChartModel]
+[CSSController] --> [ChartModel]
+
+[HTMLController] --> [BootstrapModel]
+[CSSController] --> [BootstrapModel]
+
+[CUSTOMERModel] --> [ORDERModel]
+[ORDERModel] --> [CUSTOMERModel]
+[ORDERModel] --> [ADDRESSModel]
+[ORDER_ITEMModel] --> [ORDERModel]
+[ORDER_ITEMModel] --> [PRODUCTModel]
+[PRODUCTModel] --> [PRODUCT_CATEGORYModel]
+
+[CUSTOMER] --> [CUSTOMERModel]
+[ORDER] --> [ORDERModel]
+[ADDRESS] --> [ADDRESSModel]
+[ORDER_ITEM] --> [ORDER_ITEMModel]
+[PRODUCT_CATEGORY] --> [PRODUCT_CATEGORYModel]
+[PRODUCT] --> [PRODUCTModel]
+
+@enduml
