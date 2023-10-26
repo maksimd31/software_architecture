@@ -1,0 +1,51 @@
+@startuml
+
+class Пользователь {
+    id: integer
+    имя: string
+    адрес: integer
+    хеш: integer
+}
+
+class Стол {
+    id: integer
+    количество_мест: integer
+    id_половины: integer
+    id_изображения: integer
+    комментарий: string
+    цена: integer
+}
+
+class Зал {
+    id: integer
+    тип_названия: string
+}
+
+class Изображение {
+    id: integer
+    байт: integer
+}
+
+class Заказ {
+    id: integer
+    конец_времени: time
+    начало_даты_времени: timestamp
+    id_стола: integer
+    id_пользователя: integer
+    id_коэффициента: integer
+}
+
+class Коэффициент {
+    id: integer
+    коэффициент: integer
+}
+
+Пользователь "1" -- "0..*" Стол
+Стол "1" -- "0..1" Зал
+Стол "0..*" -- "0..1" Изображение
+Заказ "1" -- "0..*" Стол
+Заказ "1" -- "0..1" Пользователь
+Заказ "1" -- "0..1" Коэффициент
+
+@enduml
+

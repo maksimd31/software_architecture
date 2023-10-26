@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <meta charset="UTF-8">
+
+    <title>Страница подтверждения бронирования</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group span {
+            display: block;
+            margin-bottom: 10px;
+        }
+         /* Mobile Styles */
+        @media screen and (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+
+            .button-container {
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 10px;
+            }
+
+            .button-container button {
+                margin-bottom: 10px;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Подтверждение бронирования</h2>
+        <div class="form-group">
+            <label for="name">Имя:</label>
+            <span>Иванов Иван</span>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <span>ivanivanov@example.com</span>
+        </div>
+        <div class="form-group">
+            <label for="date">Дата:</label>
+            <span>2023-12-31</span>
+        </div>
+        <div class="form-group">
+            <label for="time">Время:</label>
+            <span>19:00</span>
+        </div>
+        <div class="form-group">
+            <label for="guests">Количество гостей:</label>
+            <span>4</span>
+        </div>
+    </div>
+</body>
+</html>
