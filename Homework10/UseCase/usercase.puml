@@ -1,0 +1,42 @@
+@startuml
+
+left to right direction
+
+
+
+rectangle "Robot Vacuum Cleaner" as Robot {
+  usecase "Подключение" as Start
+
+
+  usecase "Уборка" as Cleaning
+  usecase "Автоматическая" as auto
+  usecase "Экстренная" as express
+  usecase "Расписание" as Schedule
+  usecase "Граффик" as graff
+
+
+
+  usecase "Обслуживание" as Service
+  usecase "Ремонт" as Service1
+  usecase "Просмотр статистики" as Service2
+  usecase "Обновление" as Service3
+}
+
+User --> Start
+User --> Cleaning
+User --> Service
+
+
+Cleaning --> express
+Cleaning --> auto
+Cleaning --> Schedule
+
+Schedule --> graff
+
+Service --> Service1
+Service --> Service2
+Service --> Service3
+
+
+
+@enduml

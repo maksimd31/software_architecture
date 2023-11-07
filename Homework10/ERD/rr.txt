@@ -1,0 +1,31 @@
+
+User {
+    id integer pk increments
+    login integer
+    hash integer
+    email integer
+}
+
+Robot {
+    id integer pk increments
+    model integer
+    version integer
+    status text
+    resource integer
+    fabricName integer
+    ipAddress integer
+    id_groupUser integer > GroupUser.id
+}
+
+GroupUser {
+    id integer pk increments
+    id_user integer > User.id
+    id_user2 integer > User.id
+    id_user3 integer > User.id
+}
+Schedule {
+    id integer pk increments
+    dateTime integer
+    mode integer
+    idRobot integer > Robot.id
+}
