@@ -1,7 +1,5 @@
 # Homework11
-## API находится в homework10
-https://github.com/maksimd31/software_architecture/tree/main/Homework10/API 
-
+## API Робот-пылесос
 ```plantuml
 openapi: 3.0.0
 info:
